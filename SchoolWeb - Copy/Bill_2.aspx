@@ -1,0 +1,216 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Bill_2.aspx.cs" Inherits="SchoolWeb.Bill_2" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+<link rel="Stylesheet" type="text/css" href="style.css" />
+    <title>BILL - VNPS</title>
+</head>
+<script type="text/javascript"> 
+
+function PrintDiv() {
+    var DocumentContainer = document.getElementById('bill_print');
+    var WindowObject = window.open('', 'PrintWindow', 'width=1250,height=750,top=50,left=0,toolbars=no,scrollbars=yes,status=yes,resizable=no');
+    var strHtml = "<html>\n<head>\n<link rel=\"stylesheet\" type=\"text/css\"  href=\"style.css\">\n</head><body><h4>\n<div style=\"testStyle \">\n" + DocumentContainer.innerHTML + "\n</div>\n</body>\n</html>";
+    
+    WindowObject.document.writeln(strHtml);
+    WindowObject.document.close();
+    WindowObject.focus();
+    WindowObject.print();
+    WindowObject.close();
+    }
+    </script>
+<body>
+    <form id="form1" runat="server">
+
+
+        <div>
+            <div class="Sec-header">
+                <div>
+                    <div class="Sec-logo"><img src="Img\emblem_png.png" class="style_img" /></div>
+                    <div class="Sec-title"><h1>VASANTHAM</h1><br/><h3>NURSERY AND PRIMARY SCHOOL</h3></div>
+                    <div class="Sec-logo2"><img src="Img\UNTITLED_001_1421299653802.jpg" class="style_img" /></div>
+                </div>
+                <div class="Sec-titlebar">
+                    <div style="width:20%; float:left; color:forestgreen; font-size:x-large;">User : <asp:Label ID="Label2" runat="server"></asp:Label></div>
+                    <div style="width:10%; float:right; font-size:x-large;"><a href="<%= ResolveUrl("default.aspx") %>"><li style="color:red;">Logout</li></a></div>
+                    <div style="width:15%; float:right; font-size:x-large;"><a href="<%= ResolveUrl("dailydet.aspx") + "?val=" + Label2.Text %>"><li style="color:red;">Daily Details</li></a></div>
+                    <div style="width:10%; float:right; font-size:x-large;"><a href="<%= ResolveUrl("bill_2.aspx") + "?val=" + Label16.Text +"&val1="+ Label2.Text%>"><li style="color:aqua;">Bill</li></a></div>
+                    <div style="width:10%; float:right; font-size:x-large;"><a href="<%= ResolveUrl("first.aspx") + "?val=" + Label2.Text %>"><li style="color:red;">Students</li></a></div>
+                    <div style="width:10%; float:right; font-size:x-large;"><a href="<%= ResolveUrl("enquiry.aspx") + "?val=" + Label2.Text %>"><li style="color:red;">Enquiry</li></a></div>
+                    <div style="width:10%; float:right; font-size:x-large;"><a href="<%= ResolveUrl("CommonTab.aspx") + "?val=" + Label2.Text %>"><li style="color:red;">Common</li></a></div>
+                </div>
+            </div>
+        </div>
+
+   
+         <asp:TextBox ID="TextBox4" runat="server" Visible="False"></asp:TextBox>
+    <div class="empty"></div>
+    <div style="width:100%;">
+    <div id="bill_print" style="border:thin solid #000000; width:45%; float:left;">
+    <div style=" border:solid;";>
+    <div style="width:20%; float:left;"><img src="Img/emblem1-removebg-preview.png" class="style_img" /></div>
+    <div style="width:80%; float:right; font-family:Cooper Black; "><center><h1>VASANTHAM</h1> <br /><h3> Nursery And Primary School</h3>
+    1/293, Main Road, Maruthakulam,<br/>Tirunelveli - 627151.</center> </div>
+    <br/><br/><br/><br/><br/><br/><br/>
+    <div> 
+    <div style="width:30%; float:left;">Bill No.:<asp:TextBox ID="TextBox5" runat="server" Width="80px"></asp:TextBox></div>
+    <div style="width:40%; float:left;">Date:<asp:TextBox ID="TextBox6" runat="server" Width="80px"></asp:TextBox></div>
+    <div style="width:30%; float:left;">Ad.No.:<asp:TextBox ID="TextBox7" runat="server" Width="75px"></asp:TextBox></div>
+    <br/><br/>
+    <div>
+    <div style="width:70%; float:left;">Name  : <asp:TextBox ID="TextBox1" runat="server" Width="280px" Height="20px"></asp:TextBox></div>
+    <div style="width:30%; float:left;">STD : <span lang="en-us">&nbsp; </span> <asp:TextBox ID="TextBox13" runat="server" Width="75px" Height="20px"></asp:TextBox></div>
+    </div><br/><br/><br/>
+    
+    </div>
+    <div>
+    <div style="border-style:solid; border-width: medium; border-color: inherit; float:left; width:70%; height:250px;">
+    <center>Particulars
+     <br/><br/>
+     <asp:TextBox ID="TextBox2" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;" ></asp:TextBox><br/>     
+     <asp:TextBox ID="TextBox3" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;"></asp:TextBox><br/>
+     <asp:TextBox ID="TextBox8" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;"></asp:TextBox><br/>
+     <asp:TextBox ID="TextBox14" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;"></asp:TextBox><br/>
+     <asp:TextBox ID="TextBox15" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;"></asp:TextBox><br/>
+     <asp:TextBox ID="TextBox21" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;"></asp:TextBox><br/>
+     <asp:TextBox ID="TextBox25" runat="server" Width="100px" Height="25px" ReadOnly="True" style="border:none;"></asp:TextBox><br/>
+     <hr><b>Total</b> 
+     <br/>
+    </center></div>
+    <div>
+    <div style="border:solid; height:250px;">
+    <center>Amount
+    <br/><br/>
+    <asp:TextBox ID="TextBox9"  runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+    <asp:TextBox ID="TextBox10" runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+    <asp:TextBox ID="TextBox11" runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+    <asp:TextBox ID="TextBox16" runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+    <asp:TextBox ID="TextBox17" runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+    <asp:TextBox ID="TextBox22" runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+    <asp:TextBox ID="TextBox24" runat="server" Width="70px" Height="25px" ReadOnly="True" style="text-align:right; border:none;"></asp:TextBox><br/>
+        <hr />
+        
+    <asp:TextBox ID="TextBox12" runat="server" Width="70px" style="text-align:right; border:none;" Font-Bold="True" Font-Size="Large"></asp:TextBox><br/>
+    </center>
+    </div>
+    </div>
+    </div>
+    <asp:TextBox ID="TextBox23" runat="server" style="Width:100%; border:none"></asp:TextBox>
+    <div>
+    Billed By : <asp:Label ID="Label16" runat="server" Text="Label"></asp:Label><asp:Label ID="Label17" runat="server" Text="Label"></asp:Label>
+        <br/>
+    </div>
+    </div>
+    </div>
+    <br/>  
+    <div style="margin-left:50%"> <!--Right -->
+    <div>
+    <div style="width:30%; float:left;">
+    <asp:Button ID="Button1" runat="server" Text="Last Bill" Width="70px" Height="25px" onclick="Button1_Click" /><br/><br/>
+    <asp:Button ID="Button4" runat="server" Text="Fetch" Width="70px" Height="25px" 
+            onclick="Button4_Click" /><br/><br/>
+    <asp:Button ID="Button5" runat="server" Text="--" Width="70px" Height="25px" onclick="Button5_Click"/></div>
+    <div style="width:30%; float:left;">
+    <asp:Button ID="Button2" runat="server" Text="Calculate" Width="70px" Height="25px" 
+            onclick="Button2_Click" /><br/><br/>
+    <asp:Button ID="Button6" runat="server" Text="New Bill" Width="70px" Height="25px" 
+            onclick="Button6_Click" /><br/><br/>
+    <asp:Button ID="Button7" runat="server" Text="Old Bill" Width="70px" Height="25px" OnClick="Button7_Click" /></div>
+    <div style="width:30%; float:left;">
+    <asp:Button ID="Button3" runat="server" Text="Save" Width="70px" Height="25px" 
+            onclick="Button3_Click" /><br/><br/>
+    <asp:Button ID="Button8" runat="server" Text="Print" Width="70px" Height="25px" 
+            OnClientClick="return PrintDiv();" onclick="Button8_Click" /><br/><br/>
+    <asp:Button ID="Button9" runat="server" Text="Save&Print" Width="70px" 
+            Height="25px" onclick="Button9_Click" Enabled=false /><br/><br/><br/>  </div>
+    </div>
+            <div>
+            <div style="width:30%; float:left;"><asp:RadioButton ID="RadioButton1" runat="server" Text="  Term Fee" GroupName="Fee" oncheckedchanged="RadioButton1_CheckedChanged"/>
+                <br/><br/>
+            <asp:RadioButton ID="RadioButton2" runat="server" Text="  Monthly Fee" GroupName="Fee" oncheckedchanged="RadioButton2_CheckedChanged" Visible="False" /><br/>
+            </div>
+            
+            <div style="width:33%; float:left;">
+            <asp:DropDownList ID="DropDownList1" runat="server" Width="90px">
+                <asp:ListItem Value="28" Text="Term - I">Term - I</asp:ListItem>
+                <asp:ListItem Value="29" Text="Term - II">Term - II</asp:ListItem>
+                <asp:ListItem Value="30" Text="Term - III">Term - III</asp:ListItem>
+                </asp:DropDownList>
+                <asp:TextBox ID="TextBox18" runat="server" Width="70px"></asp:TextBox>
+                <br/><br/>
+            <asp:DropDownList ID="DropDownList2" runat="server" Width="90px" Visible="False">
+                <asp:ListItem Value="6" Text="JUN">JUN</asp:ListItem>
+                <asp:ListItem Value="7" Text="JUL">JUL</asp:ListItem>
+                <asp:ListItem Value="8" Text="AUG">AUG</asp:ListItem>
+                <asp:ListItem Value="9" Text="SEP">SEP</asp:ListItem>
+                <asp:ListItem Value="10" Text="OCT">OCT</asp:ListItem>
+                <asp:ListItem Value="11" Text="NOV">NOV</asp:ListItem>
+                <asp:ListItem Value="12" Text="DEC">DEC</asp:ListItem>
+                <asp:ListItem Value="1" Text="JAN">JAN</asp:ListItem>
+                <asp:ListItem Value="2" Text="FEB">FEB</asp:ListItem>
+                <asp:ListItem Value="3" Text="MAR">MAR</asp:ListItem>
+                <asp:ListItem Value="4"  Text="APR">APR</asp:ListItem>
+                <asp:ListItem Value="5"  Text="MAY">MAY</asp:ListItem>
+                </asp:DropDownList>
+                <asp:TextBox ID="TextBox19" runat="server" Width="70px" Visible="False"></asp:TextBox><br/></div>
+            
+            <div style="width:33%; float:left;">
+            
+                <asp:RadioButton ID="RadioButton3" runat="server" Text="  Old" 
+                    GroupName="stu_type" /><br/>
+                <asp:RadioButton ID="RadioButton4" runat="server" Text="  New" GroupName="stu_type"/>
+                <br/>
+                <asp:Button ID="Button10" runat="server" Text="Add" Width="70px" 
+                    onclick="Button10_Click" />
+                <asp:Label ID="Label1" runat="server" Text="Left :"></asp:Label>
+                <asp:TextBox ID="TextBox20" runat="server" Width="10px"></asp:TextBox>
+                <asp:TextBox ID="TextBox26" runat="server" Width="10px" Visible="False"></asp:TextBox>
+                <br/><br/>
+             </div>
+            </div>
+    </div>
+    
+    <div ><!--GRID VIEW 1-->
+    
+    <center>
+    <br/>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
+            BackColor="#CCCCCC" BorderColor="#999999" BorderWidth="3px" 
+            CellPadding="4" DataKeyNames="bill_num" DataSourceID="SqlDataSource2" 
+            ForeColor="Black" CellSpacing="2" Width="50%" 
+            PageSize="4" BorderStyle="Solid" Height="100px" AllowPaging="True" 
+            AllowSorting="True">
+            <RowStyle BackColor="White" Font-Size="Large" Height="20px" />
+            <Columns>
+                <asp:BoundField DataField="bill_num" HeaderText="Bill No" ReadOnly="True" SortExpression="bill_num" />
+                <asp:BoundField DataField="admi_num" HeaderText="Admi No" SortExpression="admi_num" />
+                <asp:BoundField DataField="name" HeaderText="Name" SortExpression="name" />
+                <asp:BoundField DataField="mon" HeaderText="Month" SortExpression="mon" />
+                <asp:BoundField DataField="amt" HeaderText="Amt" SortExpression="amt" />
+                <asp:BoundField DataField="date" HeaderText="Date" SortExpression="date" />
+                <asp:BoundField DataField="std" HeaderText="STD" SortExpression="std" />
+                <asp:BoundField DataField="billby" HeaderText="Billed By" SortExpression="billby" />
+            </Columns>
+            <FooterStyle BackColor="#CCCCCC" HorizontalAlign="Center" />
+            <PagerStyle BackColor="#CCCCCC" ForeColor="Black" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#000099" ForeColor="White" Font-Bold="True" />
+            <HeaderStyle BackColor="Black" Font-Bold="True" ForeColor="White" />
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" 
+            ConnectionString="<%$ ConnectionStrings:SchoolDBConnectionString %>" 
+            
+            SelectCommand="SELECT [bill_num], [admi_num], [name], [mon], [amt], [date], [std], [billby] FROM [bill] WHERE ([admi_num] = @admi_num) ORDER BY [bill_num] DESC">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="TextBox7" Name="admi_num" 
+                    PropertyName="Text" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        
+    </center>
+    </div>
+    </div>
+    </form>
+</body>
+</html>

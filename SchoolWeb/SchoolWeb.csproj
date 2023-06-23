@@ -1,0 +1,580 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6C01EF34-37B9-436F-BAFC-3C7390979AD2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchoolWeb</RootNamespace>
+    <AssemblyName>SchoolWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <ApplicationIcon>favicon2222.ico</ApplicationIcon>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>12.0</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.itextsharp.5.5.13.3\lib\netstandard2.0\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.3, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.itextsharp.xmlworker.5.5.13.3\lib\netstandard2.0\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.WebDesign.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.WebForms.150.1484.0\lib\net40\Microsoft.ReportViewer.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="RZLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlParser.0.9.0\lib\net45\RZLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.OleDb, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.OleDb.6.0.0\lib\net461\System.Data.OleDb.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.6.0.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Xml, Version=6.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Xml.6.0.0\lib\net461\System.Security.Cryptography.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="Dharwin.aspx" />
+    <Content Include="emblem.aspx" />
+    <Content Include="Img\calendar.png" />
+    <Content Include="Img\emblem1_backup.jpg" />
+    <Content Include="enquiry.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="first.aspx" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="staff.aspx" />
+    <Content Include="Stocks_list.aspx" />
+    <Content Include="style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Web_1.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adminactivities.aspx.cs">
+      <DependentUpon>Adminactivities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Adminactivities.aspx.designer.cs">
+      <DependentUpon>Adminactivities.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="billedbetween.aspx.cs">
+      <DependentUpon>billedbetween.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="billedbetween.aspx.designer.cs">
+      <DependentUpon>billedbetween.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Bill_2.aspx.cs">
+      <DependentUpon>Bill_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Bill_2.aspx.designer.cs">
+      <DependentUpon>Bill_2.aspx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="classchange.aspx.cs">
+      <DependentUpon>classchange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="classchange.aspx.designer.cs">
+      <DependentUpon>classchange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CommonTab.aspx.cs">
+      <DependentUpon>CommonTab.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CommonTab.aspx.designer.cs">
+      <DependentUpon>CommonTab.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="construct.aspx.cs">
+      <DependentUpon>construct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="construct.aspx.designer.cs">
+      <DependentUpon>construct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="dailydet.aspx.cs">
+      <DependentUpon>dailydet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="dailydet.aspx.designer.cs">
+      <DependentUpon>dailydet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="database.aspx.cs">
+      <DependentUpon>database.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="database.aspx.designer.cs">
+      <DependentUpon>database.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dharwin.aspx.cs">
+      <DependentUpon>Dharwin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dharwin.aspx.designer.cs">
+      <DependentUpon>Dharwin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="emblem.aspx.cs">
+      <DependentUpon>emblem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="emblem.aspx.designer.cs">
+      <DependentUpon>emblem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="enquiry.aspx.cs">
+      <DependentUpon>enquiry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="enquiry.aspx.designer.cs">
+      <DependentUpon>enquiry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="first.aspx.cs">
+      <DependentUpon>first.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="first.aspx.designer.cs">
+      <DependentUpon>first.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="header.aspx.cs">
+      <DependentUpon>header.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="header.aspx.designer.cs">
+      <DependentUpon>header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OldBill.aspx.cs">
+      <DependentUpon>OldBill.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OldBill.aspx.designer.cs">
+      <DependentUpon>OldBill.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="paiddetails.aspx.cs">
+      <DependentUpon>paiddetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="paiddetails.aspx.designer.cs">
+      <DependentUpon>paiddetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin_Yearly.aspx.cs">
+      <DependentUpon>Admin_Yearly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin_Yearly.aspx.designer.cs">
+      <DependentUpon>Admin_Yearly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="SchoolDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchoolDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="staff.aspx.cs">
+      <DependentUpon>staff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staff.aspx.designer.cs">
+      <DependentUpon>staff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="staffattendance.aspx.cs">
+      <DependentUpon>staffattendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="staffattendance.aspx.designer.cs">
+      <DependentUpon>staffattendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stafflogindata.aspx.cs">
+      <DependentUpon>stafflogindata.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stafflogindata.aspx.designer.cs">
+      <DependentUpon>stafflogindata.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Stocks_list.aspx.cs">
+      <DependentUpon>Stocks_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Stocks_list.aspx.designer.cs">
+      <DependentUpon>Stocks_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentView.aspx.cs">
+      <DependentUpon>StudentView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StudentView.aspx.designer.cs">
+      <DependentUpon>StudentView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stu_bulk.aspx.cs">
+      <DependentUpon>stu_bulk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stu_bulk.aspx.designer.cs">
+      <DependentUpon>stu_bulk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.ashx.cs">
+      <DependentUpon>test.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="textsms.aspx.cs">
+      <DependentUpon>textsms.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="textsms.aspx.designer.cs">
+      <DependentUpon>textsms.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="todaybills.aspx.cs">
+      <DependentUpon>todaybills.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="todaybills.aspx.designer.cs">
+      <DependentUpon>todaybills.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnPaid.aspx.cs">
+      <DependentUpon>UnPaid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UnPaid.aspx.designer.cs">
+      <DependentUpon>UnPaid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="version.aspx.cs">
+      <DependentUpon>version.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="version.aspx.designer.cs">
+      <DependentUpon>version.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>4</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Access.Dao">
+      <Guid>{4AC9E1DA-5BAD-4AC7-86E3-24F4CDCECA28}</Guid>
+      <VersionMajor>12</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Img\1.jpg" />
+    <Content Include="Img\1920_1080_20100319124502712687.jpg" />
+    <Content Include="Img\2015-08-13_153751.png" />
+    <Content Include="Img\228668914-spy-desktop-wallpaper %281%29.png" />
+    <Content Include="Img\228668914-spy-desktop-wallpaper.png" />
+    <Content Include="Img\229011839-spaceship-wallpaper-hd.jpg" />
+    <Content Include="Img\347075.jpg" />
+    <Content Include="Img\5b10493b29b4b635b69064cefb7f5a6b.jpg" />
+    <Content Include="Img\70999fcs-960.jpg" />
+    <Content Include="Img\background_logon_default_windows_7-wallpaper-1280x800.jpg" />
+    <Content Include="Img\background_logon_default_windows_7-wallpaper-1280x800_edit.jpg" />
+    <Content Include="Img\banner_about.jpg" />
+    <Content Include="Img\Beautiful-Hd-Scenery-Wallpapers.jpg" />
+    <Content Include="Img\beautiful-waterfall-hd-wallpapers-1 %281%29.jpg" />
+    <Content Include="billedbetween.aspx" />
+    <Content Include="Img\Bill_Image.png" />
+    <Content Include="Img\Bill_Image2.png" />
+    <Content Include="classchange.aspx" />
+    <Content Include="CommonTab.aspx" />
+    <Content Include="construct.aspx" />
+    <Content Include="dailydet.aspx" />
+    <Content Include="favicon2222.ico" />
+    <Content Include="Img\gradient-wallpaper-2.jpg" />
+    <Content Include="Img\Happy-New-Year-2017-Images-For-WhatsApp-5.jpg" />
+    <Content Include="Img\happy-new-year-2017.jpg" />
+    <Content Include="Img\Happy-new-year-clipart-funny-2016.jpg" />
+    <Content Include="Img\Happy-New-Year.jpg" />
+    <Content Include="Img\hd-scenery-wallpapers-1080p.jpg" />
+    <Content Include="Img\IMG_20180210_123640_Edited.jpg" />
+    <Content Include="Img\IMG_6837_Edited.jpg" />
+    <Content Include="Img\linkedin-background-images-6.jpg" />
+    <Content Include="Img\login-page-animation.gif" />
+    <Content Include="Img\login-page-background-images-hd-4.jpg" />
+    <Content Include="Img\login-page-background-images-hd-7.jpg" />
+    <Content Include="Img\LOGO_PNG_16_16.png" />
+    <Content Include="Img\maxresdefault.jpg" />
+    <Content Include="Img\njHhZgk.jpg" />
+    <Content Include="OldBill.aspx" />
+    <Content Include="paiddetails.aspx" />
+    <Content Include="Admin_Yearly.aspx" />
+    <Content Include="Img\priroda-pirs-most-re-reka.jpg" />
+    <Content Include="Img\School 031.JPG" />
+    <Content Include="Img\School_Entrance.png" />
+    <Content Include="staffattendance.aspx" />
+    <Content Include="stafflogindata.aspx" />
+    <Content Include="test.aspx" />
+    <Content Include="todaybills.aspx" />
+    <Content Include="UnPaid.aspx" />
+    <Content Include="web.config" />
+    <Content Include="Img\Website_BG.jpg" />
+    <Content Include="Img\Web_Site.png" />
+    <Content Include="Img\Web_Site1.png" />
+    <Content Include="Img\Web_Site2.png" />
+    <Content Include="Img\Web_Site3.png" />
+    <Content Include="Img\windows-logon-wallpaper-11.jpg" />
+    <Content Include="Img\windows-logon-wallpaper-25.jpg" />
+    <Content Include="Img\windows-logon-wallpaper-4.jpg" />
+    <Content Include="Img\windows_7_artwork-HD.jpg" />
+    <Content Include="Img\windows_7_artwork-HD1111.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Bauhaus93Regular.woff" />
+    <Content Include="bauhs93-webfont.woff2" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="COOPBL.woff">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SchoolDBDataSet.xsc">
+      <DependentUpon>SchoolDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SchoolDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SchoolDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SchoolDBDataSet.xss">
+      <DependentUpon>SchoolDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Student_Data.xlsx" />
+    <Content Include="Img\267px-PDF_file_icon.svg.png" />
+    <Content Include="textsms.aspx" />
+    <Content Include="Web1.config" />
+    <Content Include="Adminactivities.aspx" />
+    <Content Include="Img\back.jpg" />
+    <Content Include="Img\business-infographic-flat-design-with-photo_52683-20311.jpg" />
+    <Content Include="Img\Default_Screen.jpg" />
+    <Content Include="Img\emblem1-removebg-preview.png" />
+    <Content Include="Img\emblem_With Name.png" />
+    <Content Include="Img\emblem_With Name_with_Vasanthi.png" />
+    <Content Include="Img\emblem_With Name_with_Vasanthi_eDITED.png" />
+    <Content Include="Img\login-button-blue-i8-removebg-preview.png" />
+    <Content Include="Img\login-button-png-4.jpg" />
+    <Content Include="Img\oie_38418thYA7SBT.gif" />
+    <Content Include="Img\School-Intro-WO-Audio-unscreen.gif" />
+    <Content Include="StudentView.aspx" />
+    <Content Include="test.ashx" />
+    <Content Include="Img\Top_Banner.png" />
+    <Content Include="version.aspx" />
+    <Content Include="Img\windows-logon-wallpaper-11_Resized.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Img\2QzXC.jpg" />
+    <Content Include="Img\abstract-lines-square.jpg" />
+    <Content Include="App_LocalResources\Adminactivities.aspx.resx" />
+    <Content Include="Img\aTGrq.jpg" />
+    <Content Include="Bill_2.aspx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="database.aspx" />
+    <Content Include="Img\emblem_png.png" />
+    <Content Include="header.aspx" />
+    <Content Include="Img\speed-internet-technology-background.jpg" />
+    <Content Include="stu_bulk.aspx" />
+    <Content Include="style2.css" />
+    <Content Include="Img\UNTITLED_001_1421299653802.jpg" />
+    <EmbeddedResource Include="DailyDetails.rdlc" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Browsers\" />
+    <Folder Include="App_Code\" />
+    <Folder Include="App_Data\" />
+    <Folder Include="App_GlobalResources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v17.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>8080</DevelopmentServerPort>
+          <DevelopmentServerVPath>/http://localhost/School</DevelopmentServerVPath>
+          <IISUrl>http://localhost/School</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
