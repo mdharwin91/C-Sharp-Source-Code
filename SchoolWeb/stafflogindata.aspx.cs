@@ -214,7 +214,7 @@ namespace SchoolWeb
                 SqlCommand cmd1 = new SqlCommand();
                 con1.Open();
                 TextBox5.Text = TextBox5.Text.ToString().PadLeft(4, '0');
-                cmd1 = new SqlCommand("INSERT into staffdet(staff_id,name,dateofjoin,dateofleave,userid,pwd,status) values('" + TextBox5.Text + "','" + TextBox6.Text + "','" + TextBox9.Text + "','" + TextBox10.Text + "','" + TextBox7.Text + "','" + TextBox8.Text + "','" + TextBox12.Text + "')", con1);
+                cmd1 = new SqlCommand("INSERT into staffdet(staff_id,name,dateofjoin,dateofleave,userid,pwd,status,profile) values('" + TextBox5.Text + "','" + TextBox6.Text + "','" + TextBox9.Text + "','" + TextBox10.Text + "','" + TextBox7.Text + "','" + TextBox8.Text + "','" + TextBox12.Text + "','" + TextBox4.Text + "')", con1);
                 /*cmd1 = new SqlCommand("INSERT into staffdet VALUES(@staff_id,@name,@dateofjoin,@dateofleave,@userid,@pwd)", con1);
                 cmd1.CommandType = CommandType.StoredProcedure;
                 cmd1.Parameters.AddWithValue("@staff_id", TextBox5.Text);
@@ -233,6 +233,7 @@ namespace SchoolWeb
                     sw.WriteLine(dattim + "  Name :" + TextBox6.Text);
                     sw.WriteLine(dattim + "  DOJ : " + TextBox9.Text);
                     sw.WriteLine(dattim + "  DOL " + TextBox10.Text);
+                    sw.WriteLine(dattim + "  Profile : " + TextBox4.Text);
                     sw.WriteLine(dattim + "  UserID : " + TextBox7.Text);
                     sw.WriteLine(dattim + "  Password : " + TextBox8.Text);
                     sw.WriteLine(dattim + "  Created by: " + Label1.Text);
@@ -269,7 +270,7 @@ namespace SchoolWeb
                     TextBox10.Text = dr.GetString(3).ToString(); //DOL
                     TextBox7.Text = dr.GetString(4).ToString();
                     TextBox8.Text = dr.GetString(5).ToString();
-                    
+                    TextBox4.Text = dr.GetString(8).ToString();
                     TextBox12.Text = dr.GetString(7).ToString();
                     //TextBox17.Text = dr.GetString(7).ToString();
                     //textBox3.Enabled = false;
@@ -295,7 +296,7 @@ namespace SchoolWeb
                 con.ConnectionString = ("Data Source=.\\SQLEXPRESS;Initial Catalog=SchoolDB;Integrated Security=True");
                 SqlCommand cmd = new SqlCommand();
                 con.Open();
-                cmd = new SqlCommand("update staffdet  set name = '" + TextBox6.Text + "',dateofjoin = '" + TextBox9.Text + "',dateofleave = '" + TextBox10.Text + "',userid = '" + TextBox7.Text + "',pwd='" + TextBox8.Text + "',status='" + TextBox12.Text + "' where staff_id = '" + TextBox5.Text + "'", con);
+                cmd = new SqlCommand("update staffdet  set name = '" + TextBox6.Text + "',dateofjoin = '" + TextBox9.Text + "',dateofleave = '" + TextBox10.Text + "',userid = '" + TextBox7.Text + "',pwd='" + TextBox8.Text + "',status='" + TextBox12.Text + "',profile='" + TextBox4.Text + "' where staff_id = '" + TextBox5.Text + "'", con);
                 cmd.ExecuteNonQuery();
                 //Logging
                 using (FileStream fs = new FileStream("C:\\School_Web\\Logs\\Admin_Log.txt", FileMode.Append, FileAccess.Write))
@@ -306,6 +307,7 @@ namespace SchoolWeb
                     sw.WriteLine(dattim + "  Name : " + TextBox6.Text);
                     sw.WriteLine(dattim + "  DoJ : " + TextBox9.Text);
                     sw.WriteLine(dattim + "  DoL : " + TextBox10.Text);
+                    sw.WriteLine(dattim + "  Profile : " + TextBox4.Text);
                     sw.WriteLine(dattim + "  userID : " + TextBox7.Text);
                     sw.WriteLine(dattim + "  Password : " + TextBox8.Text);
                     sw.WriteLine(dattim + "  Updated By:" + Label1.Text);
