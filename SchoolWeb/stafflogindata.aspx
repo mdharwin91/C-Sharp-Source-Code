@@ -166,6 +166,12 @@ function File1_onclick() {
                 <div style="width:33%; float:left;"><asp:TextBox ID="TextBox12" runat="server" class="textBoxClass"></asp:TextBox></div>
                 <div style="width:33%; float:left;"></div>
             </div><br /><br /><br />
+             <!--L.Line -->
+             <div style="width:100%;">
+                <div style="width:30%; float:left;" class="labelClass">Profile</div>
+                <div style="width:33%; float:left;"><asp:TextBox ID="TextBox4" runat="server" class="textBoxClass"></asp:TextBox></div>
+                <div style="width:33%; float:left;"></div>
+            </div><br /><br /><br />
             <!--L.Line -->
              <div style="width:100%;">
                 <div style="width:30%; float:left;">C1</div>

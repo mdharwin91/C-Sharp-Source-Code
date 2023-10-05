@@ -35,6 +35,7 @@ namespace SchoolWeb
         string rte_status;
         string app_fee, admin_fee;
 
+        string billStatus = "";
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -51,6 +52,8 @@ namespace SchoolWeb
             Label2.Text = name2;
             Label16.Visible = false;
 
+            Button8.Enabled = false;
+            
             
             if (Label2.Text == "")
             {
@@ -223,9 +226,9 @@ namespace SchoolWeb
                     TextBox24.Text = dr.GetString(19).ToString().Trim();
                 }
                 con.Close();
-            } 
+            }
 
-
+            Button8.Enabled = true;
             Button5_Click(Button5, null);
         }
 
@@ -294,7 +297,7 @@ namespace SchoolWeb
             
 
 
-            Button10_Click(Button10, null);
+            //Button10_Click(Button10, null);
         }
 
 
@@ -732,7 +735,9 @@ namespace SchoolWeb
                     sw.WriteLine(dattim + " --------------------------------------------------------- ");
                     sw.Close();
                 }
+                billStatus = "SAVED";
                 GridView1.DataBind();
+                Button8.Enabled = true;
             }
             catch
             {
@@ -764,6 +769,10 @@ namespace SchoolWeb
         protected void Button8_Click(object sender, EventArgs e)
         {
             //ScriptManager.RegisterStartupScript(this, GetType(), "Print", "Print()", false);
+            if (billStatus == "SAVED")
+            {
+                Response.Write("<script>alert('*** BILL NOT YET SAVED ***')</script>");
+            }
             Button6_Click(Button6, null);
         }
 

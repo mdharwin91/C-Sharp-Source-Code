@@ -140,17 +140,13 @@ function PrintDiv() {
     <asp:Button ID="Button4" runat="server" Text="Fetch" class="buttonClass"  onclick="Button4_Click" /><br/><br/>
     <asp:Button ID="Button5" runat="server" Text="--" Width="70px" Height="25px" onclick="Button5_Click"/></div>
     <div style="width:30%; float:left;">
-    <asp:Button ID="Button2" runat="server" Text="Calculate" class="buttonClass" 
-            onclick="Button2_Click" /><br/><br/>
-    <asp:Button ID="Button6" runat="server" Text="New Bill" class="buttonClass" 
-            onclick="Button6_Click" /><br/><br/>
+    <asp:Button ID="Button2" runat="server" Text="Calculate" class="buttonClass" onclick="Button2_Click" /><br/><br/>
+    <asp:Button ID="Button6" runat="server" Text="New Bill" class="buttonClass"  onclick="Button6_Click" /><br/><br/>
     <asp:Button ID="Button7" runat="server" Text="Old Bill" class="buttonClass" OnClick="Button7_Click" /></div>
     <div style="width:30%; float:left;">
-    <asp:Button ID="Button3" runat="server" Text="Save" class="buttonClass" 
-            onclick="Button3_Click" /><br/><br/>
-    <asp:Button ID="Button8" runat="server" Text="Print" class="buttonClass" 
-            OnClientClick="return PrintDiv();" onclick="Button8_Click" /><br/><br/>
-    <asp:Button ID="Button9" runat="server" Text="Save&Print" class="buttonClassDisabled" onclick="Button9_Click" Enabled="false" /><br/><br/><br/>  </div>
+    <asp:Button ID="Button3" runat="server" Text="Save" class="buttonClass" onclick="Button3_Click" /><br/><br/>
+    <asp:Button ID="Button8" runat="server" Text="Print" class="buttonClass" OnClientClick="return PrintDiv();" onclick="Button8_Click" /><br/><br/>
+    <asp:Button ID="Button9" runat="server" Text="Save&Print" class="buttonClass" onclick="Button9_Click" Visible="false" /><br/><br/><br/>  </div>
     </div>
             <div>
             <div style="width:30%; float:left;"><asp:RadioButton ID="RadioButton1" runat="server" Text="  Term Fee" GroupName="Fee" oncheckedchanged="RadioButton1_CheckedChanged"/>
