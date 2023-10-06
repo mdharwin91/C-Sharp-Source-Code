@@ -18,6 +18,7 @@ using System.IO;
 using System.Text;
 using System.Net;
 using Org.BouncyCastle.Crypto.Signers;
+using Microsoft.Office.Interop.Excel;
 
 namespace SchoolWeb
 {
@@ -53,8 +54,11 @@ namespace SchoolWeb
             Label16.Visible = false;
 
             Button8.Enabled = false;
-            
-            
+            Button8.Visible = false;
+            Button5.Visible = false;
+            Button3.Visible = false;
+
+
             if (Label2.Text == "")
             {
                 Response.Redirect("Default.aspx");
@@ -170,7 +174,7 @@ namespace SchoolWeb
             }
             con.Close();
 
-            Button4_Click(Button4, null);
+            //Button4_Click(Button4, null);
             //Code for spliting Particulars
             string[] particular = particulars.Split('/');
             if (particular[0] == "Admi & Reg Fee")
@@ -229,6 +233,8 @@ namespace SchoolWeb
             }
 
             Button8.Enabled = true;
+            Button8.Visible = true;
+            Button3.Visible = false;
             Button5_Click(Button5, null);
         }
 
@@ -294,13 +300,12 @@ namespace SchoolWeb
             {
                 DropDownList1.SelectedValue = "30";
             }
-            
 
 
-            //Button10_Click(Button10, null);
+            Button3.Visible = true;
+            Button10_Click(Button10, null);
+           
         }
-
-
         protected void Button10_Click(object sender, EventArgs e)
         {
             TextBox20.Text = (4 - Data_Count).ToString().Trim();
@@ -738,6 +743,10 @@ namespace SchoolWeb
                 billStatus = "SAVED";
                 GridView1.DataBind();
                 Button8.Enabled = true;
+
+                Button8.Visible = true;
+
+                Button3.Visible = false;
             }
             catch
             {
