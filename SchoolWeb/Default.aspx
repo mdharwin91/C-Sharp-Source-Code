@@ -220,7 +220,7 @@
         <div style="width:35%; float:right; margin-top:8%; border-style:solid; border-color:black; border-radius:25px; margin-right:10%;">
             <!-- Right Page Line 1 -->
            <div style="margin-top:10%;">
-                <div style="width:25%; float:left; margin-left:15%;" class="labelClass">Login Here...</div>
+                <div style="width:25%; float:left; margin-left:15%;" class="labelClassSmall">Login Here...</div>
                <div style="width:25%; float:right; margin-right:15%;"><asp:TextBox ID="TextBox4" runat="server" class="textBoxClass" ></asp:TextBox></div>
            </div> <br /> <br /><br />
            <!-- Right Page Line 2 -->

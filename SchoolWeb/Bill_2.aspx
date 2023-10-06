@@ -134,63 +134,61 @@ function PrintDiv() {
     </div>
         <br/>  
     <div style="margin-left:50%"> <!--Right -->
-    <div>
+    <div style="height:30%; width:99%;">
     <div style="width:30%; float:left;">
     <asp:Button ID="Button1" runat="server" Text="Last Bill" class="buttonClass" onclick="Button1_Click" /><br/><br/>
-    <asp:Button ID="Button4" runat="server" Text="Fetch" class="buttonClass"  onclick="Button4_Click" /><br/><br/>
-    <asp:Button ID="Button5" runat="server" Text="--" Width="70px" Height="25px" onclick="Button5_Click"/></div>
+    <asp:Button ID="Button7" runat="server" Text="Old Bill" class="buttonClass" OnClick="Button7_Click" /><br/><br/>
+    <asp:Button ID="Button4" runat="server" Text="Fetch" class="buttonClass"  onclick="Button4_Click" /><br/><br/></div>
     <div style="width:30%; float:left;">
-    <asp:Button ID="Button2" runat="server" Text="Calculate" class="buttonClass" onclick="Button2_Click" /><br/><br/>
+    <asp:Button ID="Button2" runat="server" Text="Calculate" class="buttonClass" onclick="Button2_Click" /> <br/><br/>
     <asp:Button ID="Button6" runat="server" Text="New Bill" class="buttonClass"  onclick="Button6_Click" /><br/><br/>
-    <asp:Button ID="Button7" runat="server" Text="Old Bill" class="buttonClass" OnClick="Button7_Click" /></div>
+    <asp:Button ID="Button3" runat="server" Text="Save" class="buttonClass" onclick="Button3_Click" /><br/><br/></div>
     <div style="width:30%; float:left;">
-    <asp:Button ID="Button3" runat="server" Text="Save" class="buttonClass" onclick="Button3_Click" /><br/><br/>
+    <asp:Button ID="Button5" runat="server" Text="--" class="buttonClass" onclick="Button5_Click"/><br/><br/>
     <asp:Button ID="Button8" runat="server" Text="Print" class="buttonClass" OnClientClick="return PrintDiv();" onclick="Button8_Click" /><br/><br/>
-    <asp:Button ID="Button9" runat="server" Text="Save&Print" class="buttonClass" onclick="Button9_Click" Visible="false" /><br/><br/><br/>  </div>
+    <asp:Button ID="Button9" runat="server" Text="Save&Print" class="buttonClass" onclick="Button9_Click" Visible="false" /><br/><br/></div>
     </div>
-            <div>
-            <div style="width:30%; float:left;"><asp:RadioButton ID="RadioButton1" runat="server" Text="  Term Fee" GroupName="Fee" oncheckedchanged="RadioButton1_CheckedChanged"/>
-                <br/><br/>
-            <asp:RadioButton ID="RadioButton2" runat="server" Text="  Monthly Fee" GroupName="Fee" oncheckedchanged="RadioButton2_CheckedChanged" Visible="False" /><br/>
-            </div>
+    <div style="width:99%; height:20%; float:left;">
+        <div style="width:30%; float:left;">
+        <asp:RadioButton ID="RadioButton1" runat="server" Text="  Term Fee" GroupName="Fee" oncheckedchanged="RadioButton1_CheckedChanged" Visible="False" /><br/><br/>
+        <asp:RadioButton ID="RadioButton2" runat="server" Text="  Monthly Fee" GroupName="Fee" oncheckedchanged="RadioButton2_CheckedChanged" Visible="False" /><br/>
+        </div>
             
-            <div style="width:33%; float:left;">
-            <asp:DropDownList ID="DropDownList1" runat="server" Width="125px" CssClass="textBoxClass">
-                <asp:ListItem Value="28" Text="Term - I">Term - I</asp:ListItem>
-                <asp:ListItem Value="29" Text="Term - II">Term - II</asp:ListItem>
-                <asp:ListItem Value="30" Text="Term - III">Term - III</asp:ListItem>
-                </asp:DropDownList>
-                <asp:TextBox ID="TextBox18" runat="server" Width="70px" CssClass="textBoxClassCentered" Visible="false"></asp:TextBox>
-                <br/><br/>
-            <asp:DropDownList ID="DropDownList2" runat="server" Width="90px" Visible="False">
-                <asp:ListItem Value="6" Text="JUN">JUN</asp:ListItem>
-                <asp:ListItem Value="7" Text="JUL">JUL</asp:ListItem>
-                <asp:ListItem Value="8" Text="AUG">AUG</asp:ListItem>
-                <asp:ListItem Value="9" Text="SEP">SEP</asp:ListItem>
-                <asp:ListItem Value="10" Text="OCT">OCT</asp:ListItem>
-                <asp:ListItem Value="11" Text="NOV">NOV</asp:ListItem>
-                <asp:ListItem Value="12" Text="DEC">DEC</asp:ListItem>
-                <asp:ListItem Value="1" Text="JAN">JAN</asp:ListItem>
-                <asp:ListItem Value="2" Text="FEB">FEB</asp:ListItem>
-                <asp:ListItem Value="3" Text="MAR">MAR</asp:ListItem>
-                <asp:ListItem Value="4"  Text="APR">APR</asp:ListItem>
-                <asp:ListItem Value="5"  Text="MAY">MAY</asp:ListItem>
-                </asp:DropDownList>
-                <asp:TextBox ID="TextBox19" runat="server" Width="70px" Visible="False"></asp:TextBox><br/></div>
+    <div style="width:33%; float:left;">
+    <asp:DropDownList ID="DropDownList1" runat="server" Width="125px" CssClass="textBoxClass">
+        <asp:ListItem Value="28" Text="Term - I">Term - I</asp:ListItem>
+        <asp:ListItem Value="29" Text="Term - II">Term - II</asp:ListItem>
+        <asp:ListItem Value="30" Text="Term - III">Term - III</asp:ListItem>
+        </asp:DropDownList>
+        <asp:TextBox ID="TextBox18" runat="server" Width="70px" Height="23px" CssClass="textBoxClassCentered" Visible="false"></asp:TextBox>
+        <br/><br/>
+    <asp:DropDownList ID="DropDownList2" runat="server" Width="90px" Visible="False">
+        <asp:ListItem Value="6" Text="JUN">JUN</asp:ListItem>
+        <asp:ListItem Value="7" Text="JUL">JUL</asp:ListItem>
+        <asp:ListItem Value="8" Text="AUG">AUG</asp:ListItem>
+        <asp:ListItem Value="9" Text="SEP">SEP</asp:ListItem>
+        <asp:ListItem Value="10" Text="OCT">OCT</asp:ListItem>
+        <asp:ListItem Value="11" Text="NOV">NOV</asp:ListItem>
+        <asp:ListItem Value="12" Text="DEC">DEC</asp:ListItem>
+        <asp:ListItem Value="1" Text="JAN">JAN</asp:ListItem>
+        <asp:ListItem Value="2" Text="FEB">FEB</asp:ListItem>
+        <asp:ListItem Value="3" Text="MAR">MAR</asp:ListItem>
+        <asp:ListItem Value="4"  Text="APR">APR</asp:ListItem>
+        <asp:ListItem Value="5"  Text="MAY">MAY</asp:ListItem>
+        </asp:DropDownList>
+        <asp:TextBox ID="TextBox19" runat="server" Width="70px" Visible="False"></asp:TextBox><br/></div>
             
-            <div style="width:33%; float:left;">
+    <div style="width:33%; float:left;">
             
-                <asp:RadioButton ID="RadioButton3" runat="server" Text="  Old" 
-                    GroupName="stu_type" /><br/>
-                <asp:RadioButton ID="RadioButton4" runat="server" Text="  New" GroupName="stu_type"/>
-                <br/>
-                <asp:Button ID="Button10" runat="server" Text="Add" class="buttonClass" onclick="Button10_Click" />
-                <asp:Label ID="Label1" runat="server" Text="Left :" Visible="false"></asp:Label>
-                <asp:TextBox ID="TextBox20" runat="server" Width="10px" Visible="False"></asp:TextBox>
-                <asp:TextBox ID="TextBox26" runat="server" Width="10px" Visible="False"></asp:TextBox>
-                <br/><br/>
-             </div>
-            </div>
+        <asp:RadioButton ID="RadioButton3" runat="server" Text="  Old"  GroupName="stu_type"  Visible="False"  />
+        <asp:RadioButton ID="RadioButton4" runat="server" Text="  New" GroupName="stu_type"  Visible="False" /> 
+        <asp:Button ID="Button10" runat="server" Text="Add" class="buttonClass" onclick="Button10_Click" />
+        <asp:Label ID="Label1" runat="server" Text="Left :" Visible="false"></asp:Label>
+        <asp:TextBox ID="TextBox20" runat="server" Width="10px" Visible="False"></asp:TextBox>
+        <asp:TextBox ID="TextBox26" runat="server" Width="10px" Visible="False"></asp:TextBox>
+        <br/><br/>
+        </div>
+    </div>
     </div>
     
     <div ><!--GRID VIEW 1-->
